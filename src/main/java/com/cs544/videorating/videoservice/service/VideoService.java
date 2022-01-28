@@ -17,7 +17,7 @@ public class VideoService implements IVideoService {
     }
 
     public Video getMovieById(Long id){
-        return videoRepository.getById(id);
+        return videoRepository.findById(id).get();
     }
 
     public Video saveMovie(Video video){
