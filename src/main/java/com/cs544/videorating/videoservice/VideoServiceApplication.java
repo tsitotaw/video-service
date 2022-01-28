@@ -2,8 +2,10 @@ package com.cs544.videorating.videoservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class VideoServiceApplication {
 
     public static void main(String[] args) {
