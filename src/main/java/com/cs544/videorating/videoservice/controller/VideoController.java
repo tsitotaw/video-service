@@ -1,5 +1,6 @@
 package com.cs544.videorating.videoservice.controller;
 
+import com.cs544.videorating.videoservice.dto.RatingVideoDTO;
 import com.cs544.videorating.videoservice.model.Video;
 import com.cs544.videorating.videoservice.service.IVideoService;
 
@@ -19,10 +20,10 @@ public class VideoController {
         return movieService.getAllMovies();
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     public Video getMovieById(@PathVariable Long id){
         return movieService.getMovieById(id);
-    }
+    }*/
 
     @PostMapping("/")
     public Video saveMovie(@RequestBody Video video){
@@ -32,5 +33,10 @@ public class VideoController {
     @DeleteMapping("/{id}")
     public void deleteMovieById(@PathVariable Long id){
         movieService.deleteMovieById(id);
+    }
+
+    @GetMapping("/{id}")
+    public RatingVideoDTO getVideoWithRating(@PathVariable Long id){
+        return movieService.getVideoWithRating(id);
     }
 }
