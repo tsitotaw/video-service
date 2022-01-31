@@ -20,10 +20,10 @@ public class VideoController {
         return movieService.getAllMovies();
     }
 
-   /* @GetMapping("/{id}")
+    @GetMapping("/basic/{id}")
     public Video getMovieById(@PathVariable Long id){
         return movieService.getMovieById(id);
-    }*/
+    }
 
     @PostMapping("/")
     public Video saveMovie(@RequestBody Video video){
