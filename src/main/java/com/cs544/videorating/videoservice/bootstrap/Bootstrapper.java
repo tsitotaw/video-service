@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component
@@ -21,9 +22,11 @@ public class Bootstrapper implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.movieService.saveMovie(new Video(null, "Breaking Bad", "Crime",new Date(2015,9,22), 3L));
-        this.movieService.saveMovie(new Video(null, "Kick Boxer", "Action",new Date(1997,6,30), 4L));
-        this.ratingService.saveRating(new Rating(null, 4));
-        this.ratingService.saveRating(new Rating(null, 3));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = dateFormat.parse("22/09/2015");
+        this.movieService.saveMovie(new Video(null, "Breaking Bad", "Crime", date, 3L));
+        this.movieService.saveMovie(new Video(null, "Kick Boxer", "Action", date, 4L));
+        this.ratingService.saveRating(new Rating(null, 1L,4));
+        this.ratingService.saveRating(new Rating(null, 2L, 3));
     }
 }

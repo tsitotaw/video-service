@@ -7,6 +7,7 @@ import com.cs544.videorating.videoservice.service.IVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,13 +21,8 @@ public class VideoController {
         return movieService.getAllMovies();
     }
 
-   /* @GetMapping("/{id}")
-    public Video getMovieById(@PathVariable Long id){
-        return movieService.getMovieById(id);
-    }*/
-
     @PostMapping("/")
-    public Video saveMovie(@RequestBody Video video){
+    public Video saveMovie(@RequestBody @Valid Video video){
         return movieService.saveMovie(video);
     }
 

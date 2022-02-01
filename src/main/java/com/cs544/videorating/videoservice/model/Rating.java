@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Digits;
 
 @Entity
 @Data
@@ -16,7 +17,6 @@ public class Rating {
     @Id
     @GeneratedValue
     private Long id;
-    //private Long videoId;
-    //private Long userId;
+    private Long userId;
     private Integer rating;
 }

@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class RatingVideoDTO {
     private Video video;
     private Rating rating;
+    private User user;
 }
