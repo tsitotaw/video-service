@@ -21,6 +21,11 @@ public class VideoController {
         return movieService.getAllMovies();
     }
 
+    @GetMapping("/basic/{id}")
+    public Video getMovieById(@PathVariable Long id){
+        return movieService.getMovieById(id);
+    }
+
     @PostMapping("/")
     public Video saveMovie(@RequestBody @Valid Video video){
         return movieService.saveMovie(video);
